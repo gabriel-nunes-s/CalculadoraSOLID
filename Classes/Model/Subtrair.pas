@@ -26,8 +26,8 @@ function TSubtrair.Executar: Integer;
 var
   idx: integer;
 begin
-  FTotal := 0;
-  for idx := 0 to Pred(FLista.Count) do
+  FTotal := FLista[0];
+  for idx := 1 to Pred(FLista.Count) do
     FTotal := FTotal - FLista[idx];
 
   result := FTotal;

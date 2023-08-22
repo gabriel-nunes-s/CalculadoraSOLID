@@ -1,14 +1,14 @@
-unit Multiplicar;
+unit Subtrair;
 
 interface
 
 uses System.Generics.Collections, Modelo.Calculadora.Interfaces;
 
 type
-  TMultiplicar = class
+  TSubtrair = class
   private
     FLista: TList<Integer>;
-    FTotal: Integer;
+    FTotal: Variant;
   public
     constructor Create;
     function Executar: Integer;
@@ -17,18 +17,18 @@ type
 
 implementation
 
-constructor TMultiplicar.Create;
+constructor TSubtrair.Create;
 begin
   FLista := TList<Integer>.Create;
 end;
 
-function TMultiplicar.Executar: Integer;
+function TSubtrair.Executar: Integer;
 var
   idx: integer;
 begin
-  FTotal := 1;
+  FTotal := 0;
   for idx := 0 to Pred(FLista.Count) do
-    FTotal := FTotal * FLista[idx];
+    FTotal := FTotal - FLista[idx];
 
   result := FTotal;
 end;

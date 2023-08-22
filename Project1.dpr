@@ -3,11 +3,12 @@ program Project1;
 uses
   Vcl.Forms,
   TelaCalculadora in 'TelaCalculadora.pas' {Form1},
-  Dividir in 'Model\Dividir.pas',
-  Multiplicar in 'Model\Multiplicar.pas',
-  Somar in 'Model\Somar.pas',
-  Subtrair in 'Model\Subtrair.pas',
-  Modelo.Calculadora.Interfaces in 'Classes\Interfaces\Modelo.Calculadora.Interfaces.pas';
+  Modelo.Calculadora.Interfaces in 'Classes\Interfaces\Modelo.Calculadora.Interfaces.pas',
+  Dividir in 'Classes\Model\Dividir.pas',
+  Somar in 'Classes\Model\Somar.pas',
+  Multiplicar in 'Classes\Model\Multiplicar.pas',
+  Subtrair in 'Classes\Model\Subtrair.pas',
+  Calculadora in 'Classes\Calculadora.pas';
 
 {$R *.res}
 
