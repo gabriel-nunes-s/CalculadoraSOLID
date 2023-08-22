@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/08/16 15:55:07.000.724,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/16 16:19:02.000.314,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Gabriel\OneDrive\Área de Trabalho\Unit1.pas</Transaction>
+    <Transaction>2023/08/16 16:19:02.000.315,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Gabriel\OneDrive\Área de Trabalho\Unit1.dfm</Transaction>
+    <Transaction>2023/08/16 16:26:17.000.483,C:\Users\Gabriel\OneDrive\Área de Trabalho\Unit1.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\TelaCalculadora.pas</Transaction>
+    <Transaction>2023/08/16 16:26:17.000.484,C:\Users\Gabriel\OneDrive\Área de Trabalho\Unit1.dfm=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\TelaCalculadora.dfm</Transaction>
+    <Transaction>2023/08/16 17:57:39.000.173,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Project1.dproj</Transaction>
+    <Transaction>2023/08/18 16:48:24.000.822,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:52:27.968,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:52:50.135,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Model\Dividir.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:53:08.380,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:53:22.155,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Model\Multiplicar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:53:58.523,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:54:16.001,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Model\Somar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:54:20.952,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:54:45.377,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Subtrair.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:54:53.700,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Subtrair.pas=</Transaction>
+    <Transaction>2023/08/18 16:54:59.203,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:55:09.971,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Model\Subtrair.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:55:54.552,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/18 16:56:38.669,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Interfaces\Modelo.Calculadora.Interfaces.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
