@@ -61,7 +61,6 @@ object Form1: TForm1
     Height = 51
     Caption = '-'
     TabOrder = 1
-    OnClick = ButtonSubtracaoClick
   end
   object ButtonMultiplicacao: TButton
     Left = 195
@@ -70,7 +69,6 @@ object Form1: TForm1
     Height = 51
     Caption = '*'
     TabOrder = 2
-    OnClick = ButtonMultiplicacaoClick
   end
   object ButtonDivisao: TButton
     Left = 195
@@ -79,7 +77,6 @@ object Form1: TForm1
     Height = 51
     Caption = '/'
     TabOrder = 3
-    OnClick = ButtonDivisaoClick
   end
   object ButtonCalcular: TButton
     Left = 195

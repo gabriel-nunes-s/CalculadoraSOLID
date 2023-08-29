@@ -7,24 +7,24 @@ uses System.Generics.Collections, Modelo.Calculadora.Interfaces;
 type
   TSubtrair = class
   private
-    FLista: TList<Integer>;
+    FLista: TList<Variant>;
     FTotal: Variant;
   public
     constructor Create;
-    function Executar: Integer;
-    property ListaValores: TList<Integer> read FLista write FLista;
+    function Executar: Variant;
+    property ListaValores: TList<Variant> read FLista write FLista;
   end;
 
 implementation
 
 constructor TSubtrair.Create;
 begin
-  FLista := TList<Integer>.Create;
+  FLista := TList<Variant>.Create;
 end;
 
-function TSubtrair.Executar: Integer;
+function TSubtrair.Executar: Variant;
 var
-  idx: integer;
+  idx: Integer;
 begin
   FTotal := FLista[0];
   for idx := 1 to Pred(FLista.Count) do

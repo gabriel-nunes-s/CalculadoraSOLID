@@ -7,22 +7,22 @@ uses System.Generics.Collections, Modelo.Calculadora.Interfaces;
 type
   TMultiplicar = class
   private
-    FLista: TList<Integer>;
-    FTotal: Integer;
+    FLista: TList<Variant>;
+    FTotal: Variant;
   public
     constructor Create;
-    function Executar: Integer;
-    property ListaValores: TList<Integer> read FLista write FLista;
+    function Executar: Variant;
+    property ListaValores: TList<Variant> read FLista write FLista;
   end;
 
 implementation
 
 constructor TMultiplicar.Create;
 begin
-  FLista := TList<Integer>.Create;
+  FLista := TList<Variant>.Create;
 end;
 
-function TMultiplicar.Executar: Integer;
+function TMultiplicar.Executar: Variant;
 var
   idx: integer;
 begin

@@ -21,16 +21,16 @@
     <Transaction>2023/08/18 16:55:09.000.971,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Model\Subtrair.pas</Transaction>
     <Transaction>2023/08/18 16:55:54.000.552,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
     <Transaction>2023/08/18 16:56:38.000.669,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Interfaces\Modelo.Calculadora.Interfaces.pas</Transaction>
-    <Transaction>2023/08/22 14:44:46.543,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:44:59.156,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Dividir.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:45:05.912,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:45:32.569,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Somar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:45:37.291,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:45:47.552,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Multiplicar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:45:51.548,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:46:03.297,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Subtrair.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:46:21.564,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2023/08/22 14:46:58.945,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit2.pas</Transaction>
-    <Transaction>2023/08/22 14:47:08.613,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Calculadora.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit2.pas</Transaction>
+    <Transaction>2023/08/22 14:44:46.000.543,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:44:59.000.156,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Dividir.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:45:05.000.912,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:45:32.000.569,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Somar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:45:37.000.291,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:45:47.000.552,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Multiplicar.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:45:51.000.548,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:46:03.000.297,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Model\Subtrair.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:46:21.000.564,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2023/08/22 14:46:58.000.945,=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit2.pas</Transaction>
+    <Transaction>2023/08/22 14:47:08.000.613,C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Classes\Calculadora.pas=C:\Users\Gabriel\OneDrive\Documents\Embarcadero\Studio\Projects\Win32\Debug\Calculadora\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>

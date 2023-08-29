@@ -32,14 +32,11 @@ type
     procedure ButtonLimparClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ButtonCalcularClick(Sender: TObject);
-    procedure ButtonSubtracaoClick(Sender: TObject);
-    procedure ButtonMultiplicacaoClick(Sender: TObject);
-    procedure ButtonDivisaoClick(Sender: TObject);
   private
 
   public
     calc: TCalculadora;
-    procedure CarregarValores(Operacao: String);
+    procedure CarregarValores(ValueNumber: Variant; ValueOperation: Variant);
     procedure MostrarTotal;
     procedure Limpar;
 
@@ -66,30 +63,15 @@ end;
 //Botoes de Operacao
 procedure TForm1.ButtonSomaClick(Sender: TObject);
 begin
-  CarregarValores('+');
+  CarregarValores(StrToInt(LabelResultado.Caption), (Sender as TButton).Caption);
   Limpar;
 
-end;
-
-procedure TForm1.ButtonSubtracaoClick(Sender: TObject);
-begin
-  CarregarValores('-');
-  Limpar;
 end;
 
 procedure TForm1.ButtonCalcularClick(Sender: TObject);
 begin
-  CarregarValores('=');
-  calc.VerificarOperacao;
+  CarregarValores(StrToInt(LabelResultado.Caption), '');
   MostrarTotal;
-  calc.LimparLista;
-  calc.LimparListaOperacao;
-end;
-
-procedure TForm1.ButtonDivisaoClick(Sender: TObject);
-begin
-  CarregarValores('/');
-  Limpar;
 end;
 
 procedure TForm1.ButtonLimparClick(Sender: TObject);
@@ -97,22 +79,16 @@ begin
   Limpar;
 end;
 
-procedure TForm1.ButtonMultiplicacaoClick(Sender: TObject);
+procedure TForm1.CarregarValores(ValueNumber: Variant; ValueOperation: Variant);
 begin
-  CarregarValores('*');
-  Limpar;
-
-end;
-
-procedure TForm1.CarregarValores(Operacao: String);
-begin
-  calc.Adicionar(StrToInt(LabelResultado.Caption));
-  calc.AdicionarOperacao(Operacao);
+  calc.Adicionar(ValueNumber);
+  calc.Adicionar(ValueOperation);
 end;
 
 procedure TForm1.MostrarTotal;
 begin
-  LabelResultado.Caption := IntToStr(calc.Total);
+  LabelResultado.Caption := calc.Total;
+  LabelOperacao.Caption := calc.Total;
 end;
 
 procedure TForm1.Limpar;

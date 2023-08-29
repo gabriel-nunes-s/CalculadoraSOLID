@@ -1,0 +1,127 @@
+unit Calculadora;
+
+interface
+
+uses Somar, Multiplicar, Modelo.Calculadora.Interfaces, System.Generics.Collections,
+  Dividir, Subtrair, Contnrs;
+
+type
+  TCalculadora = class
+  private
+    FLista: TList<Variant>;
+    FPilha: TObjectStack;
+    FPilhaPosFixa: TObjectStack;
+    FTotal: Variant;
+    FSomar: TSomar;
+    FDiv: TDividir;
+    FSub: TSubtrair;
+    FMult: TMultiplicar;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure LimparLista;
+    procedure Adicionar(ValueNumber: Variant; ValueOperation: Variant);
+    function Total: Variant;
+    procedure VerificarOperacao(Item: Variant);
+    procedure Somar;
+    procedure Multiplicar;
+    procedure Dividir;
+    procedure Subtrair;
+  end;
+
+implementation
+
+{ TCalculadora }
+
+//Construtor
+constructor TCalculadora.Create;
+begin
+  FSomar := TSomar.Create;
+  FMult := TMultiplicar.Create;
+  FDiv := TDividir.Create;
+  FSub := TSubtrair.Create;
+  FLista := TList<Variant>.Create;
+  FPilha:= TObjectStack.Create;
+  FPilhaPosFixa:= TObjectStack.Create;
+end;
+
+//Destrutor
+destructor TCalculadora.Destroy;
+begin
+  FSomar.DisposeOf;
+  FMult.DisposeOf;
+  FSub.DisposeOf;
+  FDiv.DisposeOf;
+end;
+
+//Procedimentos para adicionar e limpar (sem retorno)
+procedure TCalculadora.Adicionar(ValueNumber: Variant; ValueOperation: Variant);
+begin
+  FLista.Add(ValueNumber);
+  FLista.Add(ValueOperation);
+end;
+
+procedure TCalculadora.LimparLista;
+begin
+  FLista.Clear;
+end;
+
+//Procedimentos operacoes
+procedure TCalculadora.Dividir;
+begin
+  FDiv.ListaValores := FLista;
+  FTotal := FDiv.Executar;
+end;
+
+procedure TCalculadora.Multiplicar;
+begin
+  FMult.ListaValores := FLista;
+  FTotal := FMult.Executar;
+end;
+
+procedure TCalculadora.Somar;
+begin
+  FSomar.ListaValores := FLista;
+  FTotal := FSomar.Executar;
+
+end;
+
+procedure TCalculadora.Subtrair;
+begin
+  FSub.ListaValores := FLista;
+  FTotal := FSub.Executar;
+
+end;
+
+//Retorna o valor total
+function TCalculadora.Total: Variant;
+begin
+  result := FTotal;
+  ///////trocar para FTotal!!!!!!!!!!!!!!!!!!
+end;
+
+procedure TCalculadora.VerificarOperacao(Item: Variant);
+
+var
+  idx : Integer;
+
+begin
+  for idx := 0 to FLista.Count do
+    if (FLista[idx].isNumeric = false) then
+      begin
+      FPilha.Push(FPilhaPosFixa.Pop);
+
+      end
+      else if FLista[idx] = '*' then
+
+
+      end
+
+
+
+
+
+
+end;
+
+end.
