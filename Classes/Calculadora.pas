@@ -10,7 +10,6 @@ type
   TCalculadora = class
   private
     FLista: TList<Variant>;
-    FPilhaOperandos: TList<Integer>;
     FListaOperandos : TList<Variant>;
     FTotal: Variant;
     FSomar: TSomar;
@@ -24,12 +23,10 @@ type
     procedure Adicionar(Value: Variant);
     function Total: Variant;
     procedure VerificarOperacao;
-    procedure RealizarOperacao(Operacao: String);
     procedure Somar(List: TList<Variant>);
     procedure Multiplicar(List: TList<Variant>);
     procedure Dividir(List: TList<Variant>);
     procedure Subtrair(List: TList<Variant>);
-    function isNumeric(Value: Variant): Boolean;
   end;
 
 implementation
@@ -43,7 +40,6 @@ begin
   FDiv := TDividir.Create;
   FSub := TSubtrair.Create;
   FLista := TList<Variant>.Create;
-  FPilhaOperandos := TList<Integer>.Create;
   FListaOperandos := TList<Variant>.Create;
 end;
 
@@ -54,7 +50,7 @@ begin
   FSub.DisposeOf;
   FDiv.DisposeOf;
   FLista.DisposeOf;
-  FPilhaOperandos.DisposeOf;
+  FListaOperandos.DisposeOf;
 end;
 
 procedure TCalculadora.Adicionar(Value: Variant);
@@ -65,7 +61,7 @@ end;
 procedure TCalculadora.LimparLista;
 begin
   FLista.Clear;
-  FPilhaOperandos.Clear;
+  FListaOperandos.Clear;
 end;
 
 procedure TCalculadora.Dividir(List: TList<Variant>);
@@ -99,14 +95,6 @@ begin
   Result := FTotal;
 end;
 
-function TCalculadora.isNumeric(Value: Variant): Boolean;
-var
-  numero: Double;
-begin
-  result := TryStrToFloat(Value, numero);
-
-end;
-
 procedure TCalculadora.VerificarOperacao;
 var
   idx: Integer;
@@ -115,47 +103,41 @@ begin
   for idx := 0 to Pred(FLista.Count) do
   begin
     Item := FLista[idx];
-    if isNumeric(Item) = true then
+    if (Item = '*') then
     begin
-      FPilhaOperandos.Add(Item);
+      FListaOperandos.Add(FLista[idx -1]);
+      FListaOperandos.Add(FLista[idx +1]);
+      Multiplicar(FListaOperandos);
+      FListaOperandos.Clear;
     end
-    else
+    else if (Item = '/') then
     begin
-      RealizarOperacao(Item);
+      FListaOperandos.Add(FLista[idx -1]);
+      FListaOperandos.Add(FLista[idx +1]);
+      Dividir(FListaOperandos);
+      FListaOperandos.Clear;
+    end
+    else if (Item = '-') then
+    begin
+      FListaOperandos.Add(FLista[idx -1]);
+      FListaOperandos.Add(FLista[idx +1]);
+      Subtrair(FListaOperandos);
+      FListaOperandos.Clear;
+    end
+    else if (Item = '+') then
+    begin
+      FListaOperandos.Add(FLista[idx -1]);
+      FListaOperandos.Add(FLista[idx +1]);
+      Somar(FListaOperandos);
+      FListaOperandos.Clear;
     end;
-  end;
-end;
-
-procedure TCalculadora.RealizarOperacao(Operacao: String);
-begin
-  if FPilhaOperandos.Count >= 2 then
-  begin
-
-    FListaOperandos.Add(FPilhaOperandos[FPilhaOperandos.Count - 1]);
-    FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
-
-    FListaOperandos.Add(FPilhaOperandos[FPilhaOperandos.Count - 1]);
-    FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
-
-    if Operacao = '+' then
-      begin
-        Somar(FListaOperandos);
-      end
-      else if Operacao = '-' then
-        begin
-          Subtrair(FListaOperandos);
-        end
-        else if Operacao = '*' then
-          begin
-            Multiplicar(FListaOperandos);
-          end
-          else if Operacao = '/' then
-            begin
-              Dividir(FListaOperandos);
-            end;
 
   end;
+
+  LimparLista;
+
 end;
+
 
 end.
 

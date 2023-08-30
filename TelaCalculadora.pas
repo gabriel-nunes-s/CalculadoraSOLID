@@ -27,7 +27,7 @@ type
     ButtonNum0: TButton;
     ButtonLimpar: TButton;
     LabelOperacao: TLabel;
-    procedure ButtonSomaClick(Sender: TObject);
+    procedure ButtonOperacaoClick(Sender: TObject);
     procedure ButtonNumClick(Sender: TObject);
     procedure ButtonLimparClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -58,19 +58,21 @@ end;
 procedure TForm1.ButtonNumClick(Sender: TObject);
 begin
   LabelResultado.Caption := LabelResultado.Caption + (Sender as TButton).Caption;
+  LabelOperacao.Caption := LabelOperacao.Caption + (Sender as TButton).Caption;
 end;
 
 //Botoes de Operacao
-procedure TForm1.ButtonSomaClick(Sender: TObject);
+procedure TForm1.ButtonOperacaoClick(Sender: TObject);
 begin
-  CarregarValores(StrToInt(LabelResultado.Caption), '+');
+  CarregarValores(StrToInt(LabelResultado.Caption), (Sender as TButton).Caption);
+  LabelOperacao.Caption := LabelOperacao.Caption + (Sender as TButton).Caption;
   Limpar;
-
 end;
+
 
 procedure TForm1.ButtonCalcularClick(Sender: TObject);
 begin
-  CarregarValores(StrToInt(LabelResultado.Caption), ' ');
+  CarregarValores(StrToInt(LabelResultado.Caption), '=');
   calc.VerificarOperacao;
   MostrarTotal;
 end;
@@ -78,6 +80,7 @@ end;
 procedure TForm1.ButtonLimparClick(Sender: TObject);
 begin
   Limpar;
+  LabelOperacao.Caption := '';
 end;
 
 procedure TForm1.CarregarValores(ValueNumber: Integer; ValueOperation: String);
@@ -95,7 +98,6 @@ end;
 procedure TForm1.Limpar;
 begin
   LabelResultado.Caption := '';
-  LabelOperacao.Caption := '';
 end;
 
 

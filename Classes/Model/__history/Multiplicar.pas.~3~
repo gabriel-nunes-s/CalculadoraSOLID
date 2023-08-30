@@ -24,7 +24,7 @@ end;
 
 function TMultiplicar.Executar: Variant;
 var
-  idx: Integer;
+  idx: integer;
 begin
   FTotal := FLista[0];
   for idx := 1 to Pred(FLista.Count) do

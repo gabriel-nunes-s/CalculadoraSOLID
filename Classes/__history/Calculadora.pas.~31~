@@ -4,13 +4,13 @@ interface
 
 uses
   Somar, Multiplicar, Modelo.Calculadora.Interfaces, System.Generics.Collections,
-  Dividir, Subtrair, Contnrs;
+  Dividir, Subtrair, Contnrs, System.SysUtils;
 
 type
   TCalculadora = class
   private
     FLista: TList<Variant>;
-    FPilhaOperandos: TList<Integer>;
+    FListaOperandos : TList<Integer>;
     FTotal: Variant;
     FSomar: TSomar;
     FDiv: TDividir;
@@ -28,6 +28,7 @@ type
     procedure Multiplicar(List: TList<Variant>);
     procedure Dividir(List: TList<Variant>);
     procedure Subtrair(List: TList<Variant>);
+    function isNumeric(Value: Variant): Boolean;
   end;
 
 implementation
@@ -41,7 +42,7 @@ begin
   FDiv := TDividir.Create;
   FSub := TSubtrair.Create;
   FLista := TList<Variant>.Create;
-  FPilhaOperandos := TList<Integer>.Create;
+  FListaOperandos := TList<Variant>.Create;
 end;
 
 destructor TCalculadora.Destroy;
@@ -50,7 +51,8 @@ begin
   FMult.DisposeOf;
   FSub.DisposeOf;
   FDiv.DisposeOf;
-  FPilhaOperandos.Free;
+  FLista.DisposeOf;
+  FListaOperandos.DisposeOf;
 end;
 
 procedure TCalculadora.Adicionar(Value: Variant);
@@ -61,32 +63,32 @@ end;
 procedure TCalculadora.LimparLista;
 begin
   FLista.Clear;
-  FPilhaOperandos.Clear;
+  FListaOperandos.Clear;
 end;
 
 procedure TCalculadora.Dividir(List: TList<Variant>);
 begin
   FDiv.ListaValores := List;
-  FTotal := FDiv.Executar;
+  FTotal := FTotal + FDiv.Executar;
 end;
 
 procedure TCalculadora.Multiplicar(List: TList<Variant>);
 begin
   FMult.ListaValores := List;
-  FTotal := FMult.Executar;
+  FTotal := FTotal + FMult.Executar;
 end;
 
 procedure TCalculadora.Somar(List: TList<Variant>);
 begin
   FSomar.ListaValores := List;
-  FTotal := FSomar.Executar;
+  FTotal := FTotal + FSomar.Executar;
 
 end;
 
 procedure TCalculadora.Subtrair(List: TList<Variant>);
 begin
   FSub.ListaValores := List;
-  FTotal := FSub.Executar;
+  FTotal := FTotal + FSub.Executar;
 
 end;
 
@@ -95,60 +97,56 @@ begin
   Result := FTotal;
 end;
 
+function TCalculadora.isNumeric(Value: Variant): Boolean;
+var
+  numero: Double;
+begin
+  result := TryStrToFloat(Value, numero);
+
+end;
+
 procedure TCalculadora.VerificarOperacao;
 var
   idx: Integer;
   Item: Variant;
 begin
-  for idx := 0 to FLista.Count - 1 do
+  for idx := 0 to Pred(FLista.Count) do
   begin
     Item := FLista[idx];
-    if Item.isNumeric then
+    if Item = '*' then
     begin
-      FPilhaOperandos.Add(Item);
+      FListaOperandos.Add(Pred(FLista[idx]));
+      FListaOperandos.Add(Succ(FLista[idx]));
+      Multiplicar(FListaOperandos);
+      FListaOperandos.Clear;
     end
-    else
+    else if Item = '/' then
     begin
-      RealizarOperacao(Item);
+      FListaOperandos.Add(Pred(FLista[idx]));
+      FListaOperandos.Add(Succ(FLista[idx]));
+      Dividir(FListaOperandos);
+      FListaOperandos.Clear;
+    end
+    else if Item = '-' then
+    begin
+      FListaOperandos.Add(Pred(FLista[idx]));
+      FListaOperandos.Add(Succ(FLista[idx]));
+      Subtrair(FListaOperandos);
+      FListaOperandos.Clear;
+    end
+    else if Item = '+' then
+    begin
+      FListaOperandos.Add(Pred(FLista[idx]));
+      FListaOperandos.Add(Succ(FLista[idx]));
+      Somar(FListaOperandos);
+      FListaOperandos.Clear;
     end;
-  end;
-end;
 
-procedure TCalculadora.RealizarOperacao(Operacao: String);
-var
-  Operando2, Operando1: Integer;
-  FListaOperandos: TList<Variant>;
-begin
-  if FPilhaOperandos.Count >= 2 then
-  begin
-    Operando2 := FPilhaOperandos[FPilhaOperandos.Count - 1];
-    FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
-
-    Operando1 := FPilhaOperandos[FPilhaOperandos.Count - 1];
-    FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
-
-    FListaOperandos.Add(Operando2);
-    FListaOperandos.Add(Operando1);
-
-    if Operacao = '+' then
-      begin
-        Somar(FListaOperandos);
-      end
-      else if Operacao = '-' then
-        begin
-          Subtrair(FListaOperandos);
-        end
-        else if Operacao = '*' then
-          begin
-            Multiplicar(FListaOperandos);
-          end
-          else if Operacao = '/' then
-            begin
-              Dividir(FListaOperandos);
-            end;
+    LimparLista;
 
   end;
 end;
+
 
 end.
 
