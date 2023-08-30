@@ -4,13 +4,14 @@ interface
 
 uses
   Somar, Multiplicar, Modelo.Calculadora.Interfaces, System.Generics.Collections,
-  Dividir, Subtrair, Contnrs;
+  Dividir, Subtrair, Contnrs, System.SysUtils;
 
 type
   TCalculadora = class
   private
     FLista: TList<Variant>;
     FPilhaOperandos: TList<Integer>;
+    FListaOperandos : TList<Variant>;
     FTotal: Variant;
     FSomar: TSomar;
     FDiv: TDividir;
@@ -28,6 +29,7 @@ type
     procedure Multiplicar(List: TList<Variant>);
     procedure Dividir(List: TList<Variant>);
     procedure Subtrair(List: TList<Variant>);
+    function isNumeric(Value: Variant): Boolean;
   end;
 
 implementation
@@ -42,6 +44,7 @@ begin
   FSub := TSubtrair.Create;
   FLista := TList<Variant>.Create;
   FPilhaOperandos := TList<Integer>.Create;
+  FListaOperandos := TList<Variant>.Create;
 end;
 
 destructor TCalculadora.Destroy;
@@ -50,7 +53,8 @@ begin
   FMult.DisposeOf;
   FSub.DisposeOf;
   FDiv.DisposeOf;
-  FPilhaOperandos.Free;
+  FLista.DisposeOf;
+  FPilhaOperandos.DisposeOf;
 end;
 
 procedure TCalculadora.Adicionar(Value: Variant);
@@ -95,15 +99,23 @@ begin
   Result := FTotal;
 end;
 
+function TCalculadora.isNumeric(Value: Variant): Boolean;
+var
+  numero: Double;
+begin
+  result := TryStrToFloat(Value, numero);
+
+end;
+
 procedure TCalculadora.VerificarOperacao;
 var
   idx: Integer;
   Item: Variant;
 begin
-  for idx := 0 to FLista.Count - 1 do
+  for idx := 0 to Pred(FLista.Count) do
   begin
     Item := FLista[idx];
-    if Item.isNumeric then
+    if isNumeric(Item) = true then
     begin
       FPilhaOperandos.Add(Item);
     end
@@ -115,20 +127,15 @@ begin
 end;
 
 procedure TCalculadora.RealizarOperacao(Operacao: String);
-var
-  Operando2, Operando1: Integer;
-  FListaOperandos: TList<Variant>;
 begin
   if FPilhaOperandos.Count >= 2 then
   begin
-    Operando2 := FPilhaOperandos[FPilhaOperandos.Count - 1];
+
+    FListaOperandos.Add(FPilhaOperandos[FPilhaOperandos.Count - 1]);
     FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
 
-    Operando1 := FPilhaOperandos[FPilhaOperandos.Count - 1];
+    FListaOperandos.Add(FPilhaOperandos[FPilhaOperandos.Count - 1]);
     FPilhaOperandos.Delete(FPilhaOperandos.Count - 1);
-
-    FListaOperandos.Add(Operando2);
-    FListaOperandos.Add(Operando1);
 
     if Operacao = '+' then
       begin

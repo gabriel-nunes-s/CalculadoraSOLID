@@ -36,7 +36,7 @@ type
 
   public
     calc: TCalculadora;
-    procedure CarregarValores(ValueNumber: Variant; ValueOperation: Variant);
+    procedure CarregarValores(ValueNumber: Integer; ValueOperation: String);
     procedure MostrarTotal;
     procedure Limpar;
 
@@ -63,14 +63,15 @@ end;
 //Botoes de Operacao
 procedure TForm1.ButtonSomaClick(Sender: TObject);
 begin
-  CarregarValores(StrToInt(LabelResultado.Caption), (Sender as TButton).Caption);
+  CarregarValores(StrToInt(LabelResultado.Caption), '+');
   Limpar;
 
 end;
 
 procedure TForm1.ButtonCalcularClick(Sender: TObject);
 begin
-  CarregarValores(StrToInt(LabelResultado.Caption), '');
+  CarregarValores(StrToInt(LabelResultado.Caption), ' ');
+  calc.VerificarOperacao;
   MostrarTotal;
 end;
 
@@ -79,7 +80,7 @@ begin
   Limpar;
 end;
 
-procedure TForm1.CarregarValores(ValueNumber: Variant; ValueOperation: Variant);
+procedure TForm1.CarregarValores(ValueNumber: Integer; ValueOperation: String);
 begin
   calc.Adicionar(ValueNumber);
   calc.Adicionar(ValueOperation);
